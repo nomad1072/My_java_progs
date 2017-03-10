@@ -1,0 +1,81 @@
+
+import java.util.*;
+public class Encryption {
+	int min,max;
+  public static  void decryption(char a[][],int min,int max)
+    {
+    	String s1=new String();
+    	for(int i=0;i<min;i++)
+    	{
+    		for(int j=0;j<max;j++)
+    		{
+    			s1=s1+a[i][j];
+    		}
+    	}
+    	System.out.println(s1);
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+	    String s2=new String();
+		s2=s.nextLine();
+		//String s2=new String();
+		
+		System.out.println(s2);
+		int n=s2.length();
+		int  min=(int) Math.floor(Math.sqrt(n));
+		int  max=(int)Math.ceil(Math.sqrt(n));
+		
+		
+		while(!(min*max>=n) && (min<=max))
+		{
+			if(min<max)
+			{
+				min++;
+			}
+		}
+		int k=0;char a1=' ';
+		char[][] a=new char[min][max];
+		System.out.println(min+" "+max);
+		for(int i=0;i<min;i++)
+		{
+			for(int j=0;j<max;j++)
+			{
+				if((k<s2.length()))
+				{
+				a[i][j]=(s2.charAt(k));
+				}
+				else
+				{
+					a[i][j]=a1;
+				}
+					
+				k++;
+			}
+		}
+		System.out.println("Matrix:");
+		for(int i=0;i<min;i++)
+		{
+			for(int j=0;j<max;j++)
+			{
+				System.out.print(a[i][j]+" ");
+			}
+			System.out.println();
+		}
+		for(int j=0;j<max;j++)
+		{
+			for(int i=0;i<min;i++)
+			{
+                
+                {
+                  System.out.print(a[i][j]);  
+                }
+				
+			}
+			System.out.print(" ");
+		}
+		System.out.println("");
+		decryption(a,min,max);
+	}
+
+}

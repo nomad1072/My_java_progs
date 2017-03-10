@@ -1,0 +1,6 @@
+n = int(input());
+c = 1;
+for i in range(n):
+     c = c * (i+1)
+print (c)
+print (list(range(4)))

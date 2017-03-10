@@ -1,0 +1,75 @@
+
+public class LinkedList {
+
+	static Node head1,head2;
+	static class Node {
+		int data;
+		Node next;
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+	Node reverse(Node head) {
+		Node prev = null;
+		Node current = head;
+		Node next = null;
+		while(current != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next;
+		}
+		head = prev;
+		return head;
+		
+	}
+	Node add(Node first, Node second) {
+		int carry = 0;
+		Node res = new Node(0);
+		Node p1 = first, p2 = second, p3 = res;
+		while(p1 != null || p2 != null) {
+			if(p1 != null) {
+				carry += p1.data;
+				p1 = p1.next;
+			}
+			if(p2 != null) {
+				carry += p2.data;
+				p2 = p2.next;
+			}
+			p3.next = new Node(carry%10);
+			p3 = p3.next;
+			carry /= 10; 
+			
+		}
+		if(carry == 1) {
+			p3.next = new Node(1);
+		}
+		return res.next;
+	}
+	static void printList(Node p3) {
+		while(p3 != null) {
+			System.out.print(p3.data+" ");
+			p3 = p3.next;
+			
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.head1 = new Node(3);
+		list.head1.next = new Node(4);
+		list.head1.next.next = new Node(8);
+		list.head1.next.next.next = new Node(9);
+		list.head2 = new Node(6);
+		list.head2.next = new Node(3);
+		list.head2.next.next = new Node(3);
+		Node rs = list.add(head1,head2);
+		Node rs1 = list.reverse(head1);
+		printList(rs);
+		System.out.println();
+		printList(rs1);
+	       
+	}
+
+}

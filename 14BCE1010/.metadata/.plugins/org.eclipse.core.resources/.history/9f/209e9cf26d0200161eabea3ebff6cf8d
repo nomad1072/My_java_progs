@@ -1,0 +1,54 @@
+import java.util.*;
+public class SherlockAndArray {
+
+	public static int findSumLeft(int[] b,int i)
+	{
+		int sum=0;
+		for(int k=0;k<i;k++)
+		{
+			sum=sum+b[k];
+		}
+		return sum;
+	}
+	public static int findSumRight(int[] b,int i)
+	{
+		int sum=0;
+		for(int k=i;k<b.length;k++)
+		{
+			sum=sum+b[k];
+		}
+		return sum;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int t;int x,y;int flag=1;;
+		t=s.nextInt();
+		for(int i=0;i<t;i++)
+		{
+			int n;
+			n=s.nextInt();
+			int[] a=new int[n];
+			for(int k=0;k<n;k++)
+			{
+				x=findSumLeft(a,i);
+				y=findSumRight(a,i);
+				if(x==y)
+				{
+					flag=0;
+					break;
+				}
+			}
+			if(flag==0)
+			{
+				System.out.println("YES");
+			}
+			else
+			{
+				System.out.println("NO");
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,10 @@
+import math
+n = int(input());
+m = int(input());
+a = int(n/m)
+print (a)
+b = float(n)/float(m)
+print (b)
+c = math.pow(n,m)
+print (c)
+print (round(23.67))

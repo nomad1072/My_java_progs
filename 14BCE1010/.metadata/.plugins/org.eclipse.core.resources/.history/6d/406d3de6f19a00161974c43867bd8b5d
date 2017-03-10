@@ -1,0 +1,13 @@
+lower = int(input());
+sum1 = 0;
+upper = int(input());
+def sum(lower,upper):
+    while lower <= upper:
+          sum1 = sum1+lower;
+          lower = lower+1;
+    return sum1; 
+c = sum(lower,upper);
+print (c)
+
+
+     

@@ -1,0 +1,15 @@
+import smtplib
+sender = 'lsai.siddharth2014@vit.ac.in'
+receiver = ['siddharthlanka@gmail.com']
+message = """ From: From Person <lsai.siddharth2014@vit.ac.in>
+To: To Person <siddharthlanka@gmail.com>
+Subject: SMPTP e-mail test
+
+This is a test email
+"""
+try:
+   smtpObj = smtplib.SMTP('localhost')
+   smtp.Obj.sendmail(sender,receiver,message)
+   print ("Successfully sent mail")
+except SMTPException:
+   print ("Error: Unable to send email")

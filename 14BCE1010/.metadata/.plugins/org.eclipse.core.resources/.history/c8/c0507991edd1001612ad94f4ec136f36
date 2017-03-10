@@ -1,0 +1,23 @@
+import java.util.LinkedList;
+
+public class Solution {
+  static class Node {
+		int data;
+		Node next;
+		Node(int d) {
+			data = d;
+			next = null;
+		}
+	}
+
+ static	Node head1, head2;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		LinkedList list = new LinkedList();
+		list.head1 = new Node(3);
+		
+		
+
+	}
+
+}

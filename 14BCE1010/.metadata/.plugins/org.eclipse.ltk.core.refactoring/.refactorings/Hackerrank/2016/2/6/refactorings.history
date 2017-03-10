@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Convert local variable &apos;QuickSortPartition.main().s&apos; in &apos;QuickSortPartition.main()&apos; to field&#x0A;- Original project: &apos;Hackerrank&apos;&#x0A;- Original element: &apos;QuickSortPartition.main().s&apos;&#x0A;- Field name: &apos;s&apos;&#x0A;- Initialize field in method&#x0A;- Declared visibility: &apos;private&apos;&#x0A;- Declare field &apos;static&apos;" description="Convert local variable &apos;s&apos; to field" final="false" flags="2" id="org.eclipse.jdt.ui.promote.temp" initialize="1" input="/src&lt;{QuickSortPartition.java" name="s" selection="837 24" stamp="1454358298255" static="true" version="1.0" visibility="2"/>
+</session>

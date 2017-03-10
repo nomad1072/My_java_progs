@@ -1,0 +1,27 @@
+import java.util.*;
+public class FibonacciModified {
+    static int fibonacci(int k)
+    {
+    	int[] a=new int[k];
+    	a[0]=0;
+    	a[1]=1;
+    	for(int i=2;i<k-1;i++)
+    	{
+    		a[i]=(a[i-1]*a[i-1])+a[i-2];
+    	}
+    	return a[k-1];
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		int a,b;
+		int n;
+		a=s.nextInt();
+		b=s.nextInt();
+		n=s.nextInt();
+		int z=fibonacci(n);
+		System.out.println(z);
+
+	}
+
+}

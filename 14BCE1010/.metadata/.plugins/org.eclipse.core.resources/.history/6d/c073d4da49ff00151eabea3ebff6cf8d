@@ -1,0 +1,26 @@
+import java.util.*;
+public class Encryption {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		String s1=new String();
+		s1=s.nextLine();
+		String s2=new String();
+		s2=s1.replaceAll(" ","");
+		System.out.println(s2);
+		int n=s2.length();
+		int min=(int) Math.floor(Math.sqrt(n));
+		int max=(int)Math.ceil(Math.sqrt(n));
+		int rows=1,columns=1;
+		
+		while(!(min*max>=n) && !(min<=max))
+		{
+			min++;
+			max++;
+		}
+		System.out.println(min+" "+max);
+
+	}
+
+}

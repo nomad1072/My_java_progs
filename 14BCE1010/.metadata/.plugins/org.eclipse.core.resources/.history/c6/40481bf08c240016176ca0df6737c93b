@@ -1,0 +1,86 @@
+import java.util.*;
+public class Kadane {
+	public static int max(int a,int b)
+	{
+	    if(a<b)
+	    {
+	    	return b;
+	    }
+	    else
+	    {
+	    	return a;
+	    }
+	}
+    public static int subArray(int[] a)
+    {
+    	int max_so_far=a[0];
+    	int curr_max=a[0];
+    	for(int i=1;i<a.length;i++)
+    	{
+    		curr_max=max(a[i],curr_max+a[i]);
+    		max_so_far=max(max_so_far,curr_max);
+    	}
+    	return max_so_far;
+    	
+    }
+    public static int sum(int[] a)
+    {
+    	int sum=a[0];
+    	for(int i=1;i<a.length;i++)
+    	{
+    		if(a[i]+a[i-1]>a[i-1])
+    		{
+    			sum=a[i]+a[i-1];
+    		}
+    	}
+    	return sum;
+    }
+    public static int sum1(int[] a)
+    {
+    	int sum=0;
+    	for(int i=0;i<a.length;i++)
+    	{
+    		if(a[i]>0)
+    		{
+    			sum+=a[i];
+    		}
+    		
+    	}
+    	return sum;
+    }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int flag =0;
+		Scanner s=new Scanner(System.in);
+		int n;
+		n=s.nextInt();
+		int[] a=new int[n];
+		for(int i=0;i<a.length;i++)
+		{
+			a[i]=s.nextInt();
+			
+		}
+		for(int i=0;i<a.length;i++)
+		{
+			if(a[i]<0)
+			{
+				flag=0;
+			}
+			else
+			{
+				flag=1;
+				break;
+			}
+		}
+		if(flag==0)
+		{
+			System.out.println(subArray(a)+" "+sum(a));
+		}
+		else
+		{
+			System.out.println(subArray(a)+" "+sum1(a));
+		}
+
+	}
+
+}

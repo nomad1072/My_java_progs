@@ -1,0 +1,36 @@
+import java.util.*;
+public class JumpingOnTheCloud {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s = new Scanner(System.in);
+		int count = 0;
+		int n = s.nextInt();
+		boolean[] a = new boolean[n];
+		for(int i = 0; i < n; i++) {
+			a[i] = s.nextBoolean();
+		}
+		int i = 0;
+		while(i < n) {
+			
+			if(a[i+1] == false) {
+				
+				if(a[i+2] == false) {
+					
+					i = i+2;
+					count++;
+					
+				} else {
+					i = i+1;
+					count++;
+				}
+			} else {
+				i = i + 2;
+				count++;
+			}
+		}
+		System.out.println(count);
+
+	}
+
+}

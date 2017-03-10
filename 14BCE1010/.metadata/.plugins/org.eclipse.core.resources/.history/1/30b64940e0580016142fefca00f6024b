@@ -1,0 +1,24 @@
+import java.util.*;
+public class StringConstruction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in);
+	    int n = in.nextInt();
+
+	    for(int a0 = 0; a0 < n; a0++){
+
+	        String s = in.next();
+
+	        char[] chars = s.toCharArray();
+	        Set<Character> uniqueChars = new HashSet<>();
+
+	        for (char c : chars) {
+	            uniqueChars.add(c);
+	        }
+	        System.out.println(uniqueChars.size());
+
+	    }
+	}
+
+}

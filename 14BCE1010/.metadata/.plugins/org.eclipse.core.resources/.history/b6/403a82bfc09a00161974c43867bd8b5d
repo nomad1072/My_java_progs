@@ -1,0 +1,6 @@
+n = int(input());
+m = int(input());
+a = int(n)/int(m)
+print (a)
+b = float(n)/float(m)
+print (b)

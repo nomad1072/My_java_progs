@@ -1,0 +1,63 @@
+import java.util.*;
+public class Encryption {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		String s1=new String();
+		s1=s.nextLine();
+		String s2=new String();
+		s2=s1.replaceAll(" ","");
+		System.out.println(s2);
+		int n=s2.length();
+		int min=(int) Math.floor(Math.sqrt(n));
+		int max=(int)Math.ceil(Math.sqrt(n));
+		int rows=1,columns=1;
+		
+		while(!(min*max>=n) && !(min<=max))
+		{
+			min++;
+			max++;
+		}
+		int k=0;char a1=' ';
+		char[][] a=new char[min][max];
+		System.out.println(min+" "+max);
+		for(int i=0;i<min;i++)
+		{
+			for(int j=0;j<max;j++)
+			{
+				if((k<s2.length()))
+				{
+				a[i][j]=(s2.charAt(k));
+				}
+				else
+				{
+					a[i][j]=a1;
+				}
+					
+				k++;
+			}
+		}
+		System.out.println("Matrix:");
+		for(int i=0;i<min;i++)
+		{
+			for(int j=0;j<max;j++)
+			{
+				System.out.print(a[i][j]);
+			}
+			System.out.println();
+		}
+		for(int j=0;j<max;j++)
+		{
+			for(int i=0;i<min;i++)
+			{
+				if(a[i][j]!=' ')
+				{
+				System.out.print(a[i][j]);
+				}
+			}
+			System.out.print(" ");
+		}
+	}
+
+}

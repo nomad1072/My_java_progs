@@ -1,0 +1,2 @@
+import webbrowser
+webbrowser.open('https://www.facebook.com/messages/?action=read&tid=1404587154')

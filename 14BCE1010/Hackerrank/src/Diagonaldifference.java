@@ -1,0 +1,53 @@
+import java.util.*;
+public class Diagonaldifference {
+	 public static void main(String[] args) {
+	        int p_diag=0,l_diag=0;
+	        Scanner in = new Scanner(System.in);
+	        int n = in.nextInt();
+	        int a[][] = new int[n][n];
+	        for(int a_i=0; a_i < n; a_i++){
+	            for(int a_j=0; a_j < n; a_j++){
+	                a[a_i][a_j] = in.nextInt();
+	            }
+	        }
+	        for(int i=0;i<n;i++)
+	            {
+	            for(int j=0;j<n;j++)
+	                {
+	                if(i==j)
+	                    {
+	                    p_diag+=a[i][j];
+	                }
+	            }
+	        }
+	      //  System.out.println(p_diag);
+	        int i=0;
+	        int j=n-1;
+	        for(int k=0;k<n;k++)
+	        {
+	        	
+	        	l_diag+=a[i][j];
+	        	i++;
+	        	j--;
+	        }
+	      //  System.out.println(l_diag);
+	        
+	        if(p_diag>l_diag)
+	            {
+	            int result=0;
+	            result=p_diag-l_diag;
+	            System.out.println(result);
+	        }
+	        else
+	            {
+	        	int result=0;
+	            result=l_diag-p_diag;
+	             System.out.println(result);
+	            
+	        }
+	        
+	        in.close();       
+	    }
+	 
+
+}

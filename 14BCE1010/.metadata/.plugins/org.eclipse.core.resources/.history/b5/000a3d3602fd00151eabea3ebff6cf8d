@@ -1,0 +1,89 @@
+import java.util.*;
+public class PalindromeIndex {
+   public static boolean checkPalindrome(String s)
+   {
+	  String s1=new String();
+	  for(int i=0;i<s.length();i++)
+	  {
+		  s1=s1+s.charAt(i);
+	  }
+	  if(s1.equals(s))
+	  {
+		  return true;
+	  }
+	  else
+	  {
+		  return false;
+	  }
+	  
+   }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int index=0;
+		Scanner s=new Scanner(System.in);
+		int n;int flag=0;
+		n=s.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			String s1=new String();
+			s1=s.next();
+			
+			int m=0;
+			if(checkPalindrome(s1)==true)
+			{
+				System.out.println(-1);
+			}
+			else
+			{
+			int j=0;int k=s1.length()-1;
+			while(j<k)
+			{
+				
+				int t=Math.abs(s1.charAt(k)-s1.charAt(j));
+				if(t!=0)
+				{
+					String s3=new String();
+					if(j==0)
+					{
+						s3=s1.substring(j+1,s1.length());
+					}
+					else
+					{
+					s3=s1.substring(0,j)+s1.substring(j+1,s1.length()-1);
+					}
+					String s4=new String();
+					if(k==s1.length()-1)
+					{
+						s4=s1.substring(0,k);
+					}
+					else
+					{
+					s4=s1.substring(0,k)+s1.substring(k+1,s1.length()-1);
+					}
+					System.out.println(s3+" "+s4+" "+s1);
+					if(checkPalindrome(s3))
+					{
+						index=j;
+						System.out.println("balh"+index);
+					
+					}
+					if(checkPalindrome(s4))
+					{
+						index=k;
+						
+					}
+					
+				}
+				
+				j++;
+				k--;
+						
+			}
+			System.out.println(index);
+			}
+			
+		}
+
+	}
+
+}

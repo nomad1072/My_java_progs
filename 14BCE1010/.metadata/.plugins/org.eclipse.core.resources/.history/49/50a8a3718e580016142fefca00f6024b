@@ -1,0 +1,6 @@
+CREATE TABLE emp {
+sname varchar(10),
+sno int(5);
+
+
+};

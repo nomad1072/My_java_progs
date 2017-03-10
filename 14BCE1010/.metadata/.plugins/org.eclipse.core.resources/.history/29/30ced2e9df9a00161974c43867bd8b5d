@@ -1,0 +1,4 @@
+n = int(input());
+for i in range(n):
+     c = c*(i+1)
+print (c)

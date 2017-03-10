@@ -1,0 +1,28 @@
+package random;
+import java.util.*;
+public class AddingFractions {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner s=new Scanner(System.in);
+		String s1;int k=0;int i=0;int j=0;
+		s1=s.nextLine();
+		int[] a=new int[4];
+		while(i<s1.length()&&s1.charAt(i)!='+')
+		{
+			while(j<s1.length()&&s1.charAt(j)!='+')
+			{
+				if(s1.charAt(j)=='/')
+				{
+					a[k]=Integer.parseInt(s1.substring(i,j));
+				}
+			}
+		}
+		for(int m=0;m<a.length;m++)
+		{
+			System.out.println(a[m]);
+		}
+
+	}
+
+}

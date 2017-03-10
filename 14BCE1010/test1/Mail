@@ -1,0 +1,14 @@
+import smtplib
+sender = 'lsai.siddharth2014@vit.ac.in'
+receiver = 'siddharthlanka@gmail.com'
+message = """ From: From Person <lsai.siddharth2014@vit.ac.in>
+To: To Person <siddharthlanka@gmail.com>
+Subject: SMPTP e-mail test
+
+This is a test email
+"""
+server = smtplib.SMTP('smtp.gmail.com',587)
+server.starttls()
+server.login("lsai.siddharth2014@vit.ac.in","reliancenetconnect")
+server.sendmail("lsai.siddharth2014@vit.ac.in","siddharthlanka@gmail.com",message)
+server.quit()
